@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="text-center max-w-5xl mx-auto px-6 py-16 animate-fade-in">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
           Your Gateway to Pakistan's 
-          <span className="text-travel-gold block mt-4">Hidden Treasures</span>
+          <span className="text-travel-accent block mt-4">Hidden Treasures</span>
         </h1>
         
         <p className="text-lg md:text-xl lg:text-2xl mb-10 text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -27,14 +27,14 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button 
             size="lg" 
-            className="bg-travel-gold hover:bg-travel-gold/90 text-travel-primary font-semibold px-10 py-6 text-lg animate-scale-in shadow-lg"
+            className="bg-travel-secondary hover:bg-travel-primary text-white font-semibold px-10 py-6 text-lg animate-scale-in shadow-lg"
           >
             Explore Tours
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-2 border-white text-white hover:bg-white hover:text-travel-primary px-10 py-6 text-lg animate-scale-in shadow-lg"
+            className="border-2 border-white bg-white text-travel-primary hover:bg-gray-100 hover:text-travel-primary px-10 py-6 text-lg animate-scale-in shadow-lg"
           >
             Watch Video
           </Button>

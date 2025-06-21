@@ -23,8 +23,8 @@ const ContactSection = () => {
             <h3 className="text-3xl font-bold mb-10">Get in Touch</h3>
             <div className="space-y-8">
               <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-gold rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-travel-primary font-bold text-xl">📱</span>
+                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">📱</span>
                 </div>
                 <div>
                   <p className="font-semibold text-lg">WhatsApp</p>
@@ -33,8 +33,8 @@ const ContactSection = () => {
               </div>
               
               <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-gold rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-travel-primary font-bold text-xl">✉️</span>
+                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">✉️</span>
                 </div>
                 <div>
                   <p className="font-semibold text-lg">Email</p>
@@ -43,8 +43,8 @@ const ContactSection = () => {
               </div>
               
               <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-gold rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-travel-primary font-bold text-xl">📍</span>
+                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">📍</span>
                 </div>
                 <div>
                   <p className="font-semibold text-lg">Office</p>
@@ -53,8 +53,8 @@ const ContactSection = () => {
               </div>
               
               <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-gold rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-travel-primary font-bold text-xl">🕒</span>
+                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">🕒</span>
                 </div>
                 <div>
                   <p className="font-semibold text-lg">Business Hours</p>
@@ -101,7 +101,7 @@ const ContactSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-travel-gold hover:bg-travel-gold/90 text-travel-primary font-semibold py-4 text-lg shadow-lg"
+                  className="w-full bg-travel-secondary hover:bg-travel-primary text-white font-semibold py-4 text-lg shadow-lg"
                 >
                   Send Message
                 </Button>

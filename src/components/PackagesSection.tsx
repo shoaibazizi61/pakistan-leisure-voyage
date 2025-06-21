@@ -69,7 +69,7 @@ const PackagesSection = () => {
                   className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4">
-                  <span className="bg-travel-gold text-travel-primary px-3 py-1 rounded-full text-sm font-semibold shadow-md">
+                  <span className="bg-travel-secondary text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
                     {pkg.duration}
                   </span>
                 </div>
@@ -89,7 +89,7 @@ const PackagesSection = () => {
                   <span className="text-2xl font-bold text-travel-primary">{pkg.price}</span>
                   <Button 
                     size="sm" 
-                    className="bg-travel-primary hover:bg-travel-secondary transition-colors shadow-md"
+                    className="bg-travel-primary hover:bg-travel-secondary transition-colors shadow-md text-white"
                   >
                     View Details
                   </Button>
