@@ -1,7 +1,14 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+  const handleBookNow = () => {
+    const message = "Hi! I'm interested in your travel packages. Can you help me plan my trip to Pakistan?";
+    const whatsappUrl = `https://wa.me/923408832033?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section 
       id="home"
@@ -25,18 +32,21 @@ const HeroSection = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-travel-secondary hover:bg-travel-primary text-white font-semibold px-10 py-6 text-lg animate-scale-in shadow-lg"
-          >
-            Explore Tours
-          </Button>
+          <Link to="/packages">
+            <Button 
+              size="lg" 
+              className="bg-travel-secondary hover:bg-travel-primary text-white font-semibold px-10 py-6 text-lg animate-scale-in shadow-lg"
+            >
+              Explore Tours
+            </Button>
+          </Link>
           <Button 
             size="lg" 
             variant="outline" 
+            onClick={handleBookNow}
             className="border-2 border-white bg-white text-travel-primary hover:bg-gray-100 hover:text-travel-primary px-10 py-6 text-lg animate-scale-in shadow-lg"
           >
-            Watch Video
+            Book on WhatsApp
           </Button>
         </div>
       </div>

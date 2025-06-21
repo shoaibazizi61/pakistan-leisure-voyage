@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const packages = [
   {
@@ -9,7 +10,7 @@ const packages = [
     location: "Gilgit-Baltistan",
     duration: "7 Days",
     price: "From $899",
-    image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3648&q=80",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     description: "Explore the stunning Hunza Valley with its ancient forts, crystal-clear lakes, and magnificent mountain views."
   },
   {
@@ -18,7 +19,7 @@ const packages = [
     location: "Karakoram Range",
     duration: "14 Days",
     price: "From $2,299",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3506&q=80",
+    image: "https://images.unsplash.com/photo-1464822759844-d150baef493e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     description: "Challenge yourself with this epic trek to the base camp of the world's second-highest peak."
   },
   {
@@ -27,7 +28,7 @@ const packages = [
     location: "Lahore & Islamabad",
     duration: "5 Days",
     price: "From $599",
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3945&q=80",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     description: "Immerse yourself in Pakistan's rich history, architecture, and vibrant cultural traditions."
   },
   {
@@ -36,7 +37,7 @@ const packages = [
     location: "Baltistan",
     duration: "10 Days",
     price: "From $1,299",
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     description: "Discover the enchanting lakes of Skardu and the world's second-highest plateau."
   }
 ];
@@ -87,12 +88,14 @@ const PackagesSection = () => {
                 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-travel-primary">{pkg.price}</span>
-                  <Button 
-                    size="sm" 
-                    className="bg-travel-primary hover:bg-travel-secondary transition-colors shadow-md text-white"
-                  >
-                    View Details
-                  </Button>
+                  <Link to={`/package/${pkg.id}`}>
+                    <Button 
+                      size="sm" 
+                      className="bg-travel-primary hover:bg-travel-secondary transition-colors shadow-md text-white"
+                    >
+                      View Details
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -100,13 +103,15 @@ const PackagesSection = () => {
         </div>
         
         <div className="text-center">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-2 border-travel-primary text-travel-primary hover:bg-travel-primary hover:text-white px-10 py-6 shadow-md"
-          >
-            View All Packages
-          </Button>
+          <Link to="/packages">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-travel-primary text-travel-primary hover:bg-travel-primary hover:text-white px-10 py-6 shadow-md"
+            >
+              View All Packages
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

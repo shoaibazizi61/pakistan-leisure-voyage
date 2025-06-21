@@ -1,5 +1,11 @@
 
 const Footer = () => {
+  const handleWhatsAppClick = () => {
+    const message = "Hi! I'm interested in your travel packages. Can you help me?";
+    const whatsappUrl = `https://wa.me/923408832033?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <footer className="bg-travel-primary text-white py-16">
       <div className="container mx-auto px-6">
@@ -21,7 +27,7 @@ const Footer = () => {
             <h4 className="font-bold text-xl mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li><a href="#home" className="text-white/80 hover:text-travel-accent transition-colors">Home</a></li>
-              <li><a href="#packages" className="text-white/80 hover:text-travel-accent transition-colors">Packages</a></li>
+              <li><a href="/packages" className="text-white/80 hover:text-travel-accent transition-colors">Packages</a></li>
               <li><a href="#about" className="text-white/80 hover:text-travel-accent transition-colors">About Us</a></li>
               <li><a href="#contact" className="text-white/80 hover:text-travel-accent transition-colors">Contact</a></li>
             </ul>
@@ -38,10 +44,25 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-xl mb-6">Connect With Us</h4>
+            <h4 className="font-bold text-xl mb-6">Get in Touch</h4>
             <div className="space-y-4">
-              <p className="text-white/80">📱 +92 300 1234567</p>
-              <p className="text-white/80">✉️ info@travelleisure.pk</p>
+              <button 
+                onClick={handleWhatsAppClick}
+                className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors group w-full text-left"
+              >
+                <span className="text-2xl">📱</span>
+                <div>
+                  <p className="font-medium">WhatsApp</p>
+                  <p className="text-sm">+92 340 8832033</p>
+                </div>
+              </button>
+              <div className="flex items-center space-x-3 text-white/80">
+                <span className="text-2xl">✉️</span>
+                <div>
+                  <p className="font-medium">Email</p>
+                  <p className="text-sm">info@travelleisure.pk</p>
+                </div>
+              </div>
               <div className="flex space-x-4 mt-6">
                 <a href="#" className="w-10 h-10 bg-travel-secondary rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform shadow-md">
                   f

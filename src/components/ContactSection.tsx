@@ -1,10 +1,18 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 const ContactSection = () => {
+  const handleWhatsAppClick = () => {
+    const message = "Hi! I would like to inquire about your travel packages to Pakistan.";
+    const whatsappUrl = `https://wa.me/923408832033?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:info@travelleisure.pk";
+  };
+
   return (
     <section id="contact" className="py-24 bg-travel-primary text-white">
       <div className="container mx-auto px-6">
@@ -18,96 +26,71 @@ const ContactSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-          <div className="animate-fade-in">
-            <h3 className="text-3xl font-bold mb-10">Get in Touch</h3>
-            <div className="space-y-8">
-              <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">📱</span>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* WhatsApp Contact */}
+            <Card className="bg-white/10 border-white/20 hover:bg-white/15 transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-travel-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <span className="text-white font-bold text-2xl">📱</span>
                 </div>
-                <div>
-                  <p className="font-semibold text-lg">WhatsApp</p>
-                  <p className="text-white/80 text-lg">+92 300 1234567</p>
+                <h3 className="text-2xl font-bold mb-4">WhatsApp Us</h3>
+                <p className="text-white/80 mb-6">
+                  Get instant responses and quick booking assistance
+                </p>
+                <p className="text-xl font-semibold mb-6">+92 340 8832033</p>
+                <Button 
+                  onClick={handleWhatsAppClick}
+                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 shadow-lg"
+                >
+                  Chat on WhatsApp
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Email Contact */}
+            <Card className="bg-white/10 border-white/20 hover:bg-white/15 transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-travel-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <span className="text-white font-bold text-2xl">✉️</span>
                 </div>
+                <h3 className="text-2xl font-bold mb-4">Email Us</h3>
+                <p className="text-white/80 mb-6">
+                  Send us detailed inquiries and get comprehensive responses
+                </p>
+                <p className="text-xl font-semibold mb-6">info@travelleisure.pk</p>
+                <Button 
+                  onClick={handleEmailClick}
+                  className="bg-travel-secondary hover:bg-travel-primary text-white font-semibold px-8 py-3 shadow-lg"
+                >
+                  Send Email
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Additional Info */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+            <div className="flex items-center justify-center space-x-4">
+              <div className="w-12 h-12 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">📍</span>
               </div>
-              
-              <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">✉️</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-lg">Email</p>
-                  <p className="text-white/80 text-lg">info@travelleisure.pk</p>
-                </div>
+              <div className="text-left">
+                <p className="font-semibold text-lg">Office Location</p>
+                <p className="text-white/80">Islamabad, Pakistan</p>
               </div>
-              
-              <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">📍</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-lg">Office</p>
-                  <p className="text-white/80 text-lg">Islamabad, Pakistan</p>
-                </div>
+            </div>
+            
+            <div className="flex items-center justify-center space-x-4">
+              <div className="w-12 h-12 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">🕒</span>
               </div>
-              
-              <div className="flex items-center space-x-6">
-                <div className="w-14 h-14 bg-travel-secondary rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">🕒</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-lg">Business Hours</p>
-                  <p className="text-white/80 text-lg">Mon-Sat: 9AM-6PM PKT</p>
-                </div>
+              <div className="text-left">
+                <p className="font-semibold text-lg">Business Hours</p>
+                <p className="text-white/80">Mon-Sat: 9AM-6PM PKT</p>
               </div>
             </div>
           </div>
-          
-          <Card className="animate-fade-in shadow-2xl" style={{ animationDelay: '0.2s' }}>
-            <CardContent className="p-10">
-              <h3 className="text-3xl font-bold text-travel-primary mb-8">Send us a Message</h3>
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="firstName" className="text-travel-primary font-medium">First Name</Label>
-                    <Input id="firstName" placeholder="John" className="mt-2 h-12" />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName" className="text-travel-primary font-medium">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" className="mt-2 h-12" />
-                  </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email" className="text-travel-primary font-medium">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" className="mt-2 h-12" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone" className="text-travel-primary font-medium">Phone (WhatsApp)</Label>
-                  <Input id="phone" placeholder="+1234567890" className="mt-2 h-12" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="message" className="text-travel-primary font-medium">Message</Label>
-                  <textarea 
-                    id="message" 
-                    rows={6} 
-                    placeholder="Tell us about your dream trip to Pakistan..."
-                    className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-travel-primary text-gray-900"
-                  ></textarea>
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full bg-travel-secondary hover:bg-travel-primary text-white font-semibold py-4 text-lg shadow-lg"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
