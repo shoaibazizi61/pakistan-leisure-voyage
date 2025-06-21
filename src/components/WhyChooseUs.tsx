@@ -21,29 +21,29 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-travel-primary mb-6">
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-travel-primary mb-8">
             Why Travel with Us?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             We're not just a travel company - we're your local friends who happen to know 
             the best spots, authentic experiences, and safest routes in Pakistan.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="text-center hover:shadow-lg transition-shadow duration-300 animate-fade-in"
+              className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in border-travel-primary/10"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <CardContent className="p-8">
-                <div className="text-6xl mb-6">{feature.icon}</div>
-                <h3 className="text-2xl font-bold text-travel-primary mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <CardContent className="p-10">
+                <div className="text-7xl mb-8">{feature.icon}</div>
+                <h3 className="text-2xl font-bold text-travel-primary mb-6">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

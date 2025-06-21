@@ -43,53 +43,53 @@ const packages = [
 
 const PackagesSection = () => {
   return (
-    <section id="packages" className="py-20 bg-gradient-to-br from-slate-50 to-green-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-travel-primary mb-6">
+    <section id="packages" className="py-24 bg-gradient-to-br from-white to-travel-primary/5">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-travel-primary mb-8">
             Featured Travel Packages
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             From the mighty peaks of the Karakoram to the rich cultural heritage of ancient cities, 
             discover Pakistan's diverse beauty through our carefully curated travel experiences.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {packages.map((pkg, index) => (
             <Card 
               key={pkg.id} 
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in"
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in border-travel-primary/10"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
                 <img 
                   src={pkg.image} 
                   alt={pkg.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4">
-                  <span className="bg-travel-gold text-travel-primary px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-travel-gold text-travel-primary px-3 py-1 rounded-full text-sm font-semibold shadow-md">
                     {pkg.duration}
                   </span>
                 </div>
               </div>
               
               <CardContent className="p-6">
-                <div className="mb-2">
-                  <h3 className="text-xl font-bold text-travel-primary mb-1">{pkg.title}</h3>
-                  <p className="text-travel-secondary text-sm">{pkg.location}</p>
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold text-travel-primary mb-2">{pkg.title}</h3>
+                  <p className="text-travel-secondary text-sm font-medium">{pkg.location}</p>
                 </div>
                 
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
                   {pkg.description}
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-travel-gold">{pkg.price}</span>
+                  <span className="text-2xl font-bold text-travel-primary">{pkg.price}</span>
                   <Button 
                     size="sm" 
-                    className="bg-travel-primary hover:bg-travel-secondary transition-colors"
+                    className="bg-travel-primary hover:bg-travel-secondary transition-colors shadow-md"
                   >
                     View Details
                   </Button>
@@ -99,11 +99,11 @@ const PackagesSection = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center">
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-2 border-travel-primary text-travel-primary hover:bg-travel-primary hover:text-white px-8 py-6"
+            className="border-2 border-travel-primary text-travel-primary hover:bg-travel-primary hover:text-white px-10 py-6 shadow-md"
           >
             View All Packages
           </Button>
